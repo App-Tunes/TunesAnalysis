@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension ResampleToSize {
+public extension ResampleToSize {
 	static func best(data: [Float], toSize count: Int) throws -> [Float] {
 		// Don't need to do this here, but doing it avoids some copying
 		guard data.count != count else { return data }
