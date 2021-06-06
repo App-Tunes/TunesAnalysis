@@ -28,8 +28,8 @@
 	
 	float factor = (float) srcCount / (float) dstCount;
 	if (factor < SRC_MAX_RATIO && 1 / factor < SRC_MAX_RATIO) {
-		[ResampleToSize secretRabbitCode:src count:srcCount dst:dst count:dstCount quality: 1];
-		return YES;
+		// 1 = Medium Quality
+		return [ResampleToSize secretRabbitCode:src count:srcCount dst:dst count:dstCount quality: 1 error: error];
 	}
 	else if (dstCount < srcCount) {
 		// This will bulldoze up to 1/256th of the frames, but it's ok.
@@ -56,7 +56,7 @@
 	vDSP_desamp(src, decimation, filter, dst, dstCount, filterCount);
 }
 
-+ (void)secretRabbitCode:(const float *)srcr count:(int)srcCount dst:(float *)dst count:(int)dstCount quality: (int) quality {
++ (BOOL)secretRabbitCode:(const float *)srcr count:(int)srcCount dst:(float *)dst count:(int)dstCount quality: (int) quality  error: (NSError **)error{
 	SRC_DATA src;
 	src.input_frames = (long)srcCount;
 	src.data_in = srcr;
@@ -71,11 +71,15 @@
 	vDSP_vfill(&zero, dst, 1, dstCount);
 
 	// do the conversion
-	int error = src_simple(&src, quality, 1);
+	int rabbitError = src_simple(&src, quality, 1);
 
-	// TODO Not exactly appropriate lol
-	if (error)
-		exit(error);
+	if (!rabbitError)
+		return YES;
+	
+	if (error) {
+		*error = [NSError errorWithDomain:@"Resample" code:2 userInfo: nil];
+	}
+	return NO;
 }
 
 @end

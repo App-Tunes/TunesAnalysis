@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL) best: (const float *)src count: (int) srcCount dst: (float *)dst count: (int) dstCount error: (NSError **)error;
 + (void) decimating: (const float *)src count: (int) srcCount dst: (float *)dst count: (int) dstCount;
-+ (void) secretRabbitCode: (const float *)src count: (int) srcCount dst: (float *)dst count: (int) dstCount quality: (int) quality;
++ (BOOL) secretRabbitCode: (const float *)src count: (int) srcCount dst: (float *)dst count: (int) dstCount quality: (int) quality error: (NSError **)error;
 
 @end
 
