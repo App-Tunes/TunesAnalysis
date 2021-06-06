@@ -37,6 +37,7 @@
 		return YES;
 	}
 	else {
+		// We have to upsample by more than 256 times; this is probably a mistake anyway
 		if (error) {
 			*error = [NSError errorWithDomain:@"Resample" code:1 userInfo: nil];
 		}

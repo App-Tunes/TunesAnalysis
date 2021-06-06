@@ -12,6 +12,7 @@
 		8002222B266829CC0059D274 /* TagLibFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 80022219266829070059D274 /* TagLibFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8002222D266829E20059D274 /* taglib_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 80022217266829070059D274 /* taglib_config.h */; };
 		80022230266838F00059D274 /* tag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800222242668294A0059D274 /* tag.framework */; };
+		80083CF7266CCFDC00F8C9DD /* ResampleToSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80083CF6266CCFDC00F8C9DD /* ResampleToSize.swift */; };
 		8018AF802659891E0041A805 /* AVFoundationLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8018AF7E2659891E0041A805 /* AVFoundationLoader.cpp */; };
 		8018AF812659891E0041A805 /* AVFoundationLoader.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8018AF7F2659891E0041A805 /* AVFoundationLoader.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		8018AF8C265993680041A805 /* libsamplerate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8018AF8B265993680041A805 /* libsamplerate.a */; };
@@ -74,6 +75,8 @@
 		80022219266829070059D274 /* TagLibFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagLibFile.h; sourceTree = "<group>"; };
 		800222242668294A0059D274 /* tag.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tag.framework; path = ../TunesAnalysis/taglib/build/taglib/tag.framework; sourceTree = "<group>"; };
 		8002222E26682AFB0059D274 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		80083CF5266CCFDB00F8C9DD /* TunesAnalysis-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunesAnalysis-Bridging-Header.h"; sourceTree = "<group>"; };
+		80083CF6266CCFDC00F8C9DD /* ResampleToSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResampleToSize.swift; sourceTree = "<group>"; };
 		8018AF7E2659891E0041A805 /* AVFoundationLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AVFoundationLoader.cpp; sourceTree = "<group>"; };
 		8018AF7F2659891E0041A805 /* AVFoundationLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AVFoundationLoader.hpp; sourceTree = "<group>"; };
 		8018AF8B265993680041A805 /* libsamplerate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsamplerate.a; path = ./libsamplerate/build/src/libsamplerate.a; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				8002222E26682AFB0059D274 /* README.md */,
+				80083CF5266CCFDB00F8C9DD /* TunesAnalysis-Bridging-Header.h */,
 				80E3003426113011006ED744 /* NSString+STD.h */,
 				8069E454261A324B0086BBFB /* Essentia.h */,
 				8069E455261A324B0086BBFB /* Essentia.mm */,
@@ -198,6 +202,7 @@
 				80BF69F52610F7D400CDCB2F /* EssentiaFile.mm */,
 				80602EC2261660F00044D614 /* ResampleToSize.h */,
 				80602EC3261660F10044D614 /* ResampleToSize.m */,
+				80083CF6266CCFDC00F8C9DD /* ResampleToSize.swift */,
 				80022217266829070059D274 /* taglib_config.h */,
 				80022219266829070059D274 /* TagLibFile.h */,
 				80022218266829070059D274 /* TagLibFile.mm */,
@@ -300,6 +305,7 @@
 					};
 					BB6A28592006236900B8BB9A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -415,6 +421,7 @@
 				8069E457261A324B0086BBFB /* Essentia.mm in Sources */,
 				8018AF9126599C500041A805 /* AVFoundationAudioFile.mm in Sources */,
 				80A6BF292613E051001A151D /* RhythmAnalyzer.cpp in Sources */,
+				80083CF7266CCFDC00F8C9DD /* ResampleToSize.swift in Sources */,
 				8018AF802659891E0041A805 /* AVFoundationLoader.cpp in Sources */,
 				807185202615BE370029E27B /* WaveformAnalyzer.cpp in Sources */,
 				80A6BF0E26127D7F001A151D /* TonalAnalyzer.cpp in Sources */,
@@ -440,6 +447,7 @@
 		80BF6A53261117F200CDCB2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -476,6 +484,7 @@
 		80BF6A54261117F200CDCB2F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -649,13 +658,18 @@
 		BB6A28662006236900B8BB9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GNC759Y8J3;
 				EXCLUDED_ARCHS = arm64;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TunesAnalysis-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = "";
 			};
 			name = Debug;
@@ -663,13 +677,17 @@
 		BB6A28672006236900B8BB9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GNC759Y8J3;
 				EXCLUDED_ARCHS = arm64;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TunesAnalysis-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = "";
 			};
 			name = Release;
