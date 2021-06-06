@@ -37,14 +37,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly)  int count;
 
-/// Loudness of the entire signal
+/// Loudness of the entire signal (LUFS / dB)
 @property (readonly) float integratedLoudness;
 /// Range of loudness in dB
 @property (readonly) float loudnessRange;
 
-/// Loudness over signal in LUFS
+/// Loudness over signal (LUFS / dB)
 @property (readonly) float *loudness;
-/// Center of gravity over signal in Hertz
+/// Center of gravity over signal (Hertz)
 @property (readonly) float *pitch;
 
 - (instancetype)initWithCount: (int) count integrated: (float) integrated range: (float) range;
