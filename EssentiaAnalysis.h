@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Loudness of the entire signal (LUFS / dB)
 @property (readonly) float integratedLoudness;
-/// Range of loudness in dB
+/// Range of loudness (dB)
 @property (readonly) float loudnessRange;
 
 /// Loudness over signal (LUFS / dB)
