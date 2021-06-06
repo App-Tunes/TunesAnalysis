@@ -23,7 +23,7 @@ AVFoundationAudioFile::~AVFoundationAudioFile() {
 	}
 }
 
-AVFoundationAudioFile::AVFoundationAudioFile(const std::string& filename, const int bufferLength) {
+AVFoundationAudioFile::AVFoundationAudioFile(const std::string& filename, const int bufferLength): _file(NULL), _buffer(NULL) {
 	// Read file
 	
 	NSError *error = nil;
@@ -34,7 +34,7 @@ AVFoundationAudioFile::AVFoundationAudioFile(const std::string& filename, const 
 		throw std::runtime_error([[error localizedDescription] STDstring]);
 	}
 	
-	_file = (__bridge_retained void*) file;
+	_file = (void *) CFBridgingRetain(file);
 	
 	// Read metadata for convenient access
 	
@@ -52,7 +52,7 @@ AVFoundationAudioFile::AVFoundationAudioFile(const std::string& filename, const 
 	// Create buffer
 	
 	AVAudioPCMBuffer *pcmBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:format frameCapacity: bufferLength / bitDepth];
-	_buffer = (__bridge_retained void*) pcmBuffer;
+	_buffer = (void *) CFBridgingRetain(pcmBuffer);
 	buffers = (float **)[pcmBuffer floatChannelData];
 	AVFoundationAudioFile::frameLength = pcmBuffer.frameLength = 0;
 	stride = [pcmBuffer stride];

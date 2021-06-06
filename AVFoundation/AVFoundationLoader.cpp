@@ -39,7 +39,10 @@ void AVAudioLoader::openAudioFile(const string& filename) {
 
 
 void AVAudioLoader::closeAudioFile() {
-	_file = NULL;
+	if (_file) {
+		delete _file;
+		_file = NULL;
+	}
 }
 
 

@@ -58,7 +58,7 @@ class AVAudioLoader : public Algorithm {
   void copyOutput();
 
  public:
-  AVAudioLoader() : Algorithm(), _configured(false) {
+  AVAudioLoader() : Algorithm(), _configured(false), _file(NULL) {
 
 	declareOutput(_audio, 1, "audio", "the input audio signal");
 	declareOutput(_sampleRate, 0, "sampleRate", "the sampling rate of the audio signal [Hz]");
