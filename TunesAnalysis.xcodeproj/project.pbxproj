@@ -295,7 +295,7 @@
 		BB6A28522006236900B8BB9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = ivorius;
 				TargetAttributes = {
 					80BF6A49261117F200CDCB2F = {
