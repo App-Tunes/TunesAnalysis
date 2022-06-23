@@ -364,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export MACOSX_DEPLOYMENT_TARGET=11.0\ncd taglib\nmkdir -p build\ncd build\ncmake .. -DCMAKE_BUILD_TYPE=Release \\\n  -DBUILD_TESTING=OFF \\\n  -DBUILD_FRAMEWORK=ON \\\n  -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \\\n  -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"\nmake\n";
+			shellScript = "export MACOSX_DEPLOYMENT_TARGET=11.0\ncd taglib\nmkdir -p build\ncd build\ncmake .. -DCMAKE_BUILD_TYPE=Release \\\n\t  -DBUILD_TESTING=OFF \\\n\t  -DBUILD_FRAMEWORK=ON \\\n      -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX11.0u.sdk/ \\\n      -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \\\n      -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"\nmake\n";
 		};
 		8018AF8A2659924C0041A805 /* Build libsamplerate */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -400,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export MACOSX_DEPLOYMENT_TARGET=11.0\ncd essentia\n./waf configure --fft=ACCELERATE --build-static --lightweight=libsamplerate,taglib\n./waf\n";
+			shellScript = "export MACOSX_DEPLOYMENT_TARGET=11.0\ncd essentia\n/usr/bin/python3 ./waf configure --fft=ACCELERATE --build-static --lightweight=libsamplerate,taglib\n/usr/bin/python3 ./waf\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
