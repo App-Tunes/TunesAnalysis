@@ -9,7 +9,7 @@
 #ifndef WaveformAnalyzer_hpp
 #define WaveformAnalyzer_hpp
 
-#include <MusicDescriptorsSet.h>
+#include <essentia/utils/extractor_music/MusicDescriptorsSet.h>
 
 class WaveformAnalyzer {
 public:

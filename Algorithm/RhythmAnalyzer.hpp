@@ -9,7 +9,7 @@
 #ifndef RhythmAnalyzer_hpp
 #define RhythmAnalyzer_hpp
 
-#include <MusicDescriptorsSet.h>
+#include <essentia/utils/extractor_music/MusicDescriptorsSet.h>
 
 class RhythmAnalyzer {
 public:

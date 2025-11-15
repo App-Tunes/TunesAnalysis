@@ -9,7 +9,7 @@
 #ifndef SpectralAnalyzer_hpp
 #define SpectralAnalyzer_hpp
 
-#include <MusicDescriptorsSet.h>
+#include <essentia/utils/extractor_music/MusicDescriptorsSet.h>
 
 class SpectralAnalyzer {
 public:

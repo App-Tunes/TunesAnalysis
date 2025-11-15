@@ -10,9 +10,9 @@
 #ifndef AVFoundationLoader_hpp
 #define AVFoundationLoader_hpp
 
-#include "streamingalgorithm.h"
-#include "network.h"
-#include "poolstorage.h"
+#include <essentia/streaming/streamingalgorithm.h>
+#include <essentia/scheduler/network.h>
+#include <essentia/streaming/algorithms/poolstorage.h>
 #include "AVFoundationAudioFile.hpp"
 
 #define MAX_AUDIO_FRAME_SIZE 192000

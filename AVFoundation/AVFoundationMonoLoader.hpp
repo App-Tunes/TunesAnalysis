@@ -9,7 +9,7 @@
 #ifndef AVFoundationAVMonoLoader_hpp
 #define AVFoundationAVMonoLoader_hpp
 
-#include "streamingalgorithmcomposite.h"
+#include <essentia/streaming/streamingalgorithmcomposite.h>
 #include "network.h"
 
 namespace essentia {

@@ -7,7 +7,7 @@
 //
 
 #import "AVFoundationLoader.hpp"
-#import "algorithmfactory.h"
+#import <essentia/algorithmfactory.h>
 #import <iomanip>  //  setw()
 
 using namespace std;

@@ -6,6 +6,6 @@
 
 * Place or symlink taglib to ./taglib 
 * Place or symlink essentia to ./essentia
-* Place or symlink libsamplerate to ./libsamplerate
-* Install dependencies: brew install eigen libsamplerate taglib
+* Place or symlink eigen to ./eigen
+* Install dependencies: brew install libsamplerate eigen taglib
 * The rest is configured to build from the project!

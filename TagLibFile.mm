@@ -42,14 +42,14 @@
 #pragma clang diagnostic pop
 
 inline NSString *TagLibStringToNS(const TagLib::String &tagString) {
-    if (tagString == TagLib::ByteVector::null)
+    if (tagString == TagLib::String())
         return nil;
     return [NSString stringWithUTF8String:tagString.toCString(true)];
 }
 
 inline const TagLib::String TagLibStringFromNS(NSString *string) {
     if (string == nil)
-        return TagLib::ByteVector::null;
+        return TagLib::String();
     return TagLib::String([string UTF8String], TagLib::String::UTF8);
 }
 

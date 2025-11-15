@@ -9,7 +9,7 @@
 #ifndef TonalAnalyzer_hpp
 #define TonalAnalyzer_hpp
 
-#include <MusicDescriptorsSet.h>
+#include <essentia/utils/extractor_music/MusicDescriptorsSet.h>
 
 class TonalAnalyzer {
 public:

@@ -9,10 +9,10 @@
 
 #import "NSString+STD.h"
 
-#import "TonalAnalyzer.hpp"
-#import "RhythmAnalyzer.hpp"
-#import "WaveformAnalyzer.hpp"
-#import "SpectralAnalyzer.hpp"
+#import "Algorithm/TonalAnalyzer.hpp"
+#import "Algorithm/RhythmAnalyzer.hpp"
+#import "Algorithm/WaveformAnalyzer.hpp"
+#import "Algorithm/SpectralAnalyzer.hpp"
 
 #import "ResampleToSize.h"
 
