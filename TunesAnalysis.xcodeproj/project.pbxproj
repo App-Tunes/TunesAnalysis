@@ -400,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export MACOSX_DEPLOYMENT_TARGET=11.0\ncd essentia\n/usr/bin/python3 ./waf configure --fft=ACCELERATE --build-static --lightweight=libsamplerate,taglib\n/usr/bin/python3 ./waf\n";
+			shellScript = "export MACOSX_DEPLOYMENT_TARGET=11.0\ncd essentia\n/usr/bin/python3 ./waf configure --fft=ACCELERATE --build-static --lightweight=libsamplerate,taglib --std=c++17\n/usr/bin/python3 ./waf\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
